@@ -7,9 +7,9 @@ let cronometro = document.getElementById("cronometro");
 let btnIniciar = document.getElementById("iniciar");
 let btnPausar = document.getElementById("pausar");
 let btnParar = document.getElementById("parar");
-let sec = 0;
-let min = 0;
-let hrs = 0;
+let s = 0;
+let m = 0;
+let h = 0;
 let t;
 
 function marker (){
