@@ -38,38 +38,26 @@ function mostrar (){
 document.getElementById("cronometro").innerHTML = `${hrs} : ${min} : ${sec}`;
 }
 
-// function add(){
-//     marker();
-//    document.getElementById("cronometro").innerHTML = (hrs > 9 ? hrs : "0" + hrs) 
-// + ":" + (minmin > 9 ?min : "0" +min) + ":" + (sec > 9 ? sec : "0" + sec);
-//    timer();
-// }
-// function timer (){
-//     t = setTimeout(add,1000);
-// }
-
-
-
-function start (){
-    console.log("Desde Iniciar");
-    console.log(btnIniciar.className);
-    // const idInterval = setInterval(cronometro, 1000);
-    start.onclick = timer;
-    document.getElementById("cronometro").innerHTML = `${hrs}:${min}:${sec}`;
-}
-
-function stop(){ 
-    stop.onclick = function (){
-    clearTimeout(t);
-    document.getElementById("cronometro").innerHTML = `${hrs}:${min}:${sec}`;
+function start(){
+if (pausa){
+    cronometro = setInterval(mostrar, 1000);
+pausa = false;
 }
 }
 
 function pause(){
-    pausar.onclick = function() {
-      document.getElementById("cronometro").innerHTML = `${hrs}:${min}:${sec}`;
-        sec = 0; min = 0; hrs = 0;
-    }
+    clearInterval(cronometro);
+    pausa = true;
 }
+
+function reset(){ 
+    clearInterval(cronometro);
+    pausa = true;
+hrs = 0;
+min = 0;
+sec = 0;
+document.getElementById("cronometro").innerHTML = `00: 00: 00`;
+}
+
 
 
