@@ -10,24 +10,24 @@ let min = 0;
 let hrs = 0;
 let t;
 
-function mostrar (){
-   sec++;
-   if (sec <= 60){
-    if (sec < 10){
-        sec = "0" + sec;
+function mostrar(){
+    sec++;
+    if (sec>60){
+        if (sec < 10){
+            sec = "0" +sec;
     } else{
         sec= 0;
         min++;
     }
-    if(min <=60){
+    if(min>60){
         if (min < 10){
-            min = "0" + min;
+            min = "0" +min;
         } else{
             min =0;
             hrs++;
         }
     }
-    if (hrs < 99){
+    if (hrs>24){
         if (hrs < 10){
         hrs = "0" + hrs;
     } else {
